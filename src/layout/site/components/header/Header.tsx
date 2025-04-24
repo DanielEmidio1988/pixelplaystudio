@@ -51,6 +51,7 @@ export function Header() {
 
     return (
         <Grid
+            component="header"
             sx={{
                 backgroundImage: `url(${currentSlide.backgroundImage})`,
                 backgroundSize: "cover",
