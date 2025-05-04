@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import { ButtonGroup, Grid, Button, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import logo from "../../../../assets/gallery/logo.jpeg";
 import bannerHomeAetherCore from "../../../../assets/gallery/banners/bannerHomeAetherCore.png";
 import bannerHomeTwilightNexus from "../../../../assets/gallery/banners/bannerTwilightNexus.png";
 import bannerHomeLumina from "../../../../assets/gallery/banners/bannerHomeLumina.png";
 import { Colors } from "../../../../assets/styles/MainStyle";
-import { styleButton, styleButtonReadMore } from "./Header.style";
+import { styleButton } from "./Header.style";
+import { DeBtn } from "../../../../components/partials/debtn/deBtn";
+import { DeSocialNetworks } from "../../../../components/partials/desocialnetworks/deSocialNetworks";
 
 export function Header() {
     // const location = useLocation();
@@ -21,7 +24,7 @@ export function Header() {
             title: "AetherCore 1.8",
             subtitle: "Eclipse da Mente:",
             description: "O Loop Zero começou. Enfrente simulações corrompidas por Host Zero/9. Skins, coop e dados espectrais te esperam!",
-            buttonText: "LEIA MAIS"
+            buttonText: "SAIBA MAIS"
         },
         {
             backgroundImage: bannerHomeTwilightNexus,
@@ -35,7 +38,7 @@ export function Header() {
             title: "Lúmina 2.3",
             subtitle: "Ecos do Inverno Eterno:",
             description: "Uma nova era de magia e mistério desperta sob os cristais do norte...",
-            buttonText: "JOGAR AGORA"
+            buttonText: "SAIBA MAIS"
         },
     ];
 
@@ -78,11 +81,44 @@ export function Header() {
             <Grid
                 sx={{
                     backgroundColor: "#000",
-                    height: "24px",
+                    height: "28px",
                     position: "relative",
+                    display: "flex",
+                    justifyContent: "flex-end",
+                    alignItems: "center",
+                    gap: 2,
+                    paddingRight: "20px",
                     zIndex: 1,
                 }}
-            />
+            >
+                <DeSocialNetworks size="small" />
+                <Grid
+                    sx={{ 
+                        display: "flex", 
+                        justifyContent: "flex-end",
+                        alignItems: "center",
+                        borderLeft: `1px solid ${Colors.primary}`, 
+                        paddingLeft: "8px",
+                        height: "70%",
+                        gap: 1, 
+                    }}
+                 >
+                    <MailOutlineIcon
+                        sx={{
+                            fill: Colors.primary,
+                            height: "16px",
+                            width: "16px",
+                        }}
+                     />
+                    <Typography 
+                        component="span" 
+                        variant="caption"
+                        color={Colors.white}
+                    >
+                        contato@pixelplaystudio.com
+                    </Typography>
+                </Grid>
+            </Grid>
 
             <Grid
                 container
@@ -150,21 +186,23 @@ export function Header() {
                             {currentSlide.title}
                         </Typography>
                         <Typography variant="h3" fontWeight="bold" sx={{ color: Colors.white, cursor: "default" }}>
-                            <span style={{ color: Colors.basecolor }}>{currentSlide.subtitle}</span>{" "}
+                            <span style={{ color: Colors.white }}>{currentSlide.subtitle}</span>{" "}
                             {currentSlide.description.split(":")[1] ?? ""}
                         </Typography>
                         <Typography variant="body1" sx={{ color: Colors.white, cursor: "default" }}>
                             {currentSlide.description}
                         </Typography>
-                        <Button onClick={() => navigation("/")} sx={styleButtonReadMore}>
-                            {currentSlide.buttonText}
-                        </Button>
+                        <DeBtn 
+                            label={currentSlide.buttonText}
+                            size="large"
+                            action={() => navigation("/")}
+                        />
                     </Grid>
                 </Grid>
-                <Button 
+                <Button
                     sx={{ position: "absolute", left: 30, top: "50%" }}
                     onClick={() => setSlideIndex((prevIndex) => {
-                        if(prevIndex <= 0){
+                        if (prevIndex <= 0) {
                             return slides.length - 1
                         }
                         return (prevIndex - 1) % slides.length;
@@ -178,7 +216,7 @@ export function Header() {
                         }}
                     />
                 </Button>
-                <Button 
+                <Button
                     sx={{ position: "absolute", right: 70, top: "50%" }}
                     onClick={() => setSlideIndex((prevIndex) => (prevIndex + 1) % slides.length)}
                 >
