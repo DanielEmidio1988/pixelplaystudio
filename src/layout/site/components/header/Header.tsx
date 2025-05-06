@@ -179,9 +179,9 @@ export function Header() {
                 <Grid container size={10} sx={{ position: "relative" }}>
                     <Grid size={{ xs: 12, md: 6 }}>
                         <Typography
-                            variant="h5"
+                            variant="body1"
                             fontWeight="bold"
-                            sx={{ color: Colors.basecolor, cursor: "default" }}
+                            sx={{ color: Colors.white, textTransform: "uppercase" ,cursor: "default" }}
                         >
                             {currentSlide.title}
                         </Typography>
