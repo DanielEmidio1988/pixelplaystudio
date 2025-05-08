@@ -27,15 +27,13 @@ export function DeBlogHighlights(props: DeBlogHighlightsProps ){
             content: "hajshjashjasjhas",
             cattegory: "Noticias",
         }
-    ]
+    ];
+
+    console.log(props)
+    
     return(
         <Grid container size={12} spacing={2}>
-            <Grid container size={12} justifyContent="center" marginBottom={2}>
-                <Typography variant="h5" fontWeight="bold" sx={{color: Colors.white, textTransform: "uppercase"}}>
-                    {props.title}
-                </Typography>
-            </Grid>
-            <Grid container size={12} sx={{height: "450px"}}>
+            <Grid container size={12}>
                 <Grid size={6}>
                     <Grid size={12} sx={{...LastNewBlog, backgroundImage: `url(${imgblog1})`}}/>
                     <Grid size={12}>
