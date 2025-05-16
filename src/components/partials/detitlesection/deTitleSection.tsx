@@ -1,15 +1,15 @@
 import { Typography, Grid } from "@mui/material"
 import { IDeTitleSectionProps } from "./deTitleSection.types";
-import { Colors } from "../../../assets/styles/MainStyle";
+import { sTitleSection, sTitleSectionShadow } from "./deTitleSection.style";
 
-export function DeTitleSection(props: IDeTitleSectionProps){
+export function DeTitleSection(props: IDeTitleSectionProps) {
     const fontSize = {
         small: "2rem",
         medium: "2.5rem",
         large: "3rem",
     };
 
-    return(
+    return (
         <Grid
             container
             size={12}
@@ -18,15 +18,26 @@ export function DeTitleSection(props: IDeTitleSectionProps){
                 padding: "20px 0"
             }}
         >
-            <Typography 
-                variant="h2" 
-                fontWeight="bold" 
+            <Typography
+                variant="h2"
+                fontWeight="bold"
+                className={props.variant ? props.variant : "default"}
                 sx={{
-                    fontSize: fontSize[props.size], 
-                    color: Colors.basecolor, 
-                    textTransform: "uppercase"
+                    ...sTitleSection,
+                    fontSize: fontSize[props.size],
                 }}
             >
+                <Typography
+                    variant="h2"
+                    fontWeight="bold"
+                    className={props.variant ? props.variant : "default"}
+                    sx={{
+                        ...sTitleSectionShadow,
+                        fontSize: fontSize[props.size],
+                    }}
+                >
+                    {props.label}
+                </Typography>
                 {props.label}
             </Typography>
         </Grid>

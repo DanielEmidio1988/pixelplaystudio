@@ -5,6 +5,7 @@ import { DeTitleSection } from "../../components/partials/detitlesection/deTitle
 import twiligthnexusposter from "../../assets/gallery/homepage/twilightnexus.png";
 import aethercoreposter from "../../assets/gallery/homepage/aethercore.png";
 import luminaposter from "../../assets/gallery/homepage/lumina.jpeg";
+import { sSectionYellow, SpacingSection } from "../../assets/styles/MainStyle";
 
 export function HomePage() {
     const gamesData = [
@@ -44,13 +45,14 @@ export function HomePage() {
             <Grid
                 container
                 size={12}
-                sx={SectionArea}
+                sx={{...sSectionYellow, padding: SpacingSection.innerSpaceLg}}
                 justifyContent="center"
             >
                 <Grid size={10}>
                     <DeTitleSection
                         label="Nossos jogos"
                         size="small"
+                        variant="reverse"
                     />
                     <Grid
                         container
