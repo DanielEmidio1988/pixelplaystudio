@@ -90,7 +90,7 @@ export function Header() {
                             {bannerInfo.title}
                         </Typography>
                         <Typography variant="h3" fontWeight="bold" sx={sHeader.sTypography}>
-                            <span style={{ color: Colors.white }}>{bannerInfo.subtitle}</span>{" "}
+                            <Typography variant="h3" component="span" sx={{ color: Colors.white, textTransform: "uppercase", fontWeight: "bold" }}>{bannerInfo.subtitle}</Typography>{" "}
                             {bannerInfo.description.split(":")[1] ?? ""}
                         </Typography>
                         <Typography variant="body1" sx={sHeader.sTypography}>

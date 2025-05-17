@@ -1,6 +1,7 @@
 import { SxProps, Theme } from "@mui/material/styles";
 import { Colors } from "../../../../assets/styles/MainStyle";
 
+
 const sHeaderContainer: SxProps<Theme> = {
     backgroundSize: "cover",
     backgroundPosition: "center",

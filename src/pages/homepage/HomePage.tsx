@@ -6,20 +6,21 @@ import twiligthnexusposter from "../../assets/gallery/homepage/twilightnexus.png
 import aethercoreposter from "../../assets/gallery/homepage/aethercore.png";
 import luminaposter from "../../assets/gallery/homepage/lumina.jpeg";
 import { sSectionYellow, SpacingSection } from "../../assets/styles/MainStyle";
+import { DeCard } from "../../components/partials/decard/DeCard";
 
 export function HomePage() {
     const gamesData = [
         {
-            poster: twiligthnexusposter,
-            title: "Twilight Nexus",
+            image: twiligthnexusposter,
+            label: "Twilight Nexus",
         },
         {
-            poster: aethercoreposter,
-            title: "Aethercore",
+            image: aethercoreposter,
+            label: "Aethercore",
         },
         {
-            poster: luminaposter,
-            title: "Lumina",
+            image: luminaposter,
+            label: "Lumina",
         }
     ];
 
@@ -45,10 +46,10 @@ export function HomePage() {
             <Grid
                 container
                 size={12}
-                sx={{...sSectionYellow, padding: SpacingSection.innerSpaceLg}}
+                
                 justifyContent="center"
             >
-                <Grid size={10}>
+                <Grid size={10} sx={{...sSectionYellow, padding: SpacingSection.innerSpaceMd}}>
                     <DeTitleSection
                         label="Nossos jogos"
                         size="small"
@@ -64,21 +65,11 @@ export function HomePage() {
                             flexWrap: "wrap",
                         }}
                     >
-                        {gamesData.map((game, index) => {
-                            return (
-                                <Grid
-                                    key={index}
-                                    sx={{
-                                        height: "240px",
-                                        width: "46%",
-                                        backgroundImage: `url(${game.poster})`,
-                                        backgroundSize: "cover",
-                                        backgroundPosition: "center",
-                                        backgroundRepeat: "no-repeat",
-                                    }}
-                                />
-                            )
-                        })}
+                        <DeCard
+                            items={gamesData}
+                            size={3}
+                            variant="model1"
+                        />
                     </Grid>
                 </Grid>
 

@@ -11,9 +11,9 @@ export const BaseLayout: Record<string, string | Record<string, string>> = {
 export const Colors: Record<string, string> = {
     white: "#FFF",
     black: "#000",
-    dark: "#0C0F0F", // apagar
+    dark: "#0C0F0F",
     terciary: "#0C0F0F",
-    secondary: "#E3BA1B", // Ajustar
+    secondary: "#E3BA1B",
     primary: "#FFD53B",
     basecolor: "#FFD53B", // Remover
 };
@@ -30,18 +30,6 @@ export const SpacingSection: Record<string, string> = {
 
 export const sSectionYellow: SxProps<Theme> = {
     backgroundColor: Colors.primary,
-    clipPath: " polygon(0 0, 100% 6%, 100% 94%, 0% 100%)",
+    clipPath: "polygon(2% 0, 98% 0, 100% 2%, 100% 98%, 98% 100%, 2% 100%, 0 98%, 0 2%);",
     position: "relative",
-
-    "&::after" :{
-        content: '""',
-        position: "absolute",
-        width: "100vw",
-        height: "8vh",
-        clipPath: " polygon(0 0, 100% 0, 44% 77%, 49% 51%, 0 100%)",
-        top: 0,
-        left: 0,
-        backgroundColor: Colors.secondary,
-    },
-
 }
