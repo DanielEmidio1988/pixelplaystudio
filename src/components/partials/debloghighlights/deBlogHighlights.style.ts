@@ -10,18 +10,6 @@ export const LastNewBlog: SxProps<Theme> = {
     clipPath: "polygon(0 0, 92% 0, 100% 16%, 100% 100%, 8% 100%, 0 84%)",
     position: "relative",
 
-    "span": {
-        position: "absolute",
-        top: 10,
-        left: 10,
-        textTransform: "uppercase",
-        fontWeight: "bold",
-        backgroundColor: Colors.primary,
-        padding: "2px 8px",
-        display: "none"
-        // clipPath: "polygon(10% 0, 100% 0, 90% 100%, 0% 100%)",
-    },
-
     "&::after": {
         content: '" "',
         position: "absolute",
@@ -47,7 +35,7 @@ export const LastNewBlog: SxProps<Theme> = {
 
 export const lastNewsBlogContent: SxProps<Theme> = {
 
-    ".lastNewBlogContent__info":{
+    ".lastNewBlogContent__info": {
         display: "flex",
         gap: 4,
         alignItems: "center",
@@ -67,8 +55,8 @@ export const lastNewsBlogContent: SxProps<Theme> = {
     },
 
     ".titleBlog": {
-        color: Colors.white, 
-        textTransform: "uppercase", 
+        color: Colors.white,
+        textTransform: "uppercase",
         margin: "8px 0",
     },
 
@@ -77,10 +65,10 @@ export const lastNewsBlogContent: SxProps<Theme> = {
     },
 
     ".readMoreBlog": {
-        color: Colors.primary, 
-        marginTop: 2, 
-        textTransform: "uppercase", 
-        cursor: "pointer", 
+        color: Colors.primary,
+        marginTop: 2,
+        textTransform: "uppercase",
+        cursor: "pointer",
         fontWeight: "bold",
     }
 }
@@ -94,5 +82,53 @@ export const cardsNewBlog: SxProps<Theme> = {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         alignItems: "center",
-    },  
+        position: "relative",
+        clipPath: "polygon(0 0, 92% 0, 100% 16%, 100% 100%, 8% 100%, 0 84%)",
+
+        "&::after": {
+            content: '" "',
+            position: "absolute",
+            top: 10,
+            left: 10,
+            width: "96%",
+            height: "90%",
+            border: `1px solid ${Colors.primary}`,
+            clipPath: "polygon(0 0, 92% 0, 100% 16%, 100% 100%, 8% 100%, 0 84%)",
+        },
+
+        "&::before": {
+            content: '" "',
+            position: "absolute",
+            top: 4,
+            left: 16,
+            width: "96%",
+            height: "92%",
+            border: `1px solid ${Colors.primary}`,
+            clipPath: "polygon(0 0, 92% 0, 100% 16%, 100% 100%, 8% 100%, 0 84%)",
+        }
+    },
+
+    ".newBlogContent__info": {
+        display: "flex",
+        gap: 2,
+
+        ".newBlogContent__info__cattegory": {
+            fontWeight: "bold",
+            color: Colors.primary,
+            cursor: "pointer",
+        },
+
+        ".newBlogContent__info__date": {
+            fontWeight: "bold",
+            color: Colors.white,
+            cursor: "default",
+        },
+    },
+
+    ".titleBlog": {
+        fontWeight: "bold",
+        textTransform: "uppercase",
+        cursor: "pointer",
+        color: Colors.white,
+    },
 }

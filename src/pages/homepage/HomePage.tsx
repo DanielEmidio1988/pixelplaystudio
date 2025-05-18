@@ -5,8 +5,10 @@ import { DeTitleSection } from "../../components/partials/detitlesection/deTitle
 import twiligthnexusposter from "../../assets/gallery/homepage/twilightnexus.png";
 import aethercoreposter from "../../assets/gallery/homepage/aethercore.png";
 import luminaposter from "../../assets/gallery/homepage/lumina.jpeg";
+import wastelandriders from "../../assets/gallery/homepage/wastelandriders.png";
 import { sSectionYellow, SpacingSection } from "../../assets/styles/MainStyle";
 import { DeCard } from "../../components/partials/decard/DeCard";
+import { DeBtn } from "../../components/partials/debtn/deBtn";
 
 export function HomePage() {
     const gamesData = [
@@ -21,7 +23,11 @@ export function HomePage() {
         {
             image: luminaposter,
             label: "Lumina",
-        }
+        },
+        {
+            image: wastelandriders,
+            label: "Wasteland Riders",
+        },
     ];
 
     return (
@@ -35,7 +41,7 @@ export function HomePage() {
                 <Grid size={10}>
                     <DeTitleSection
                         label="Ultimas noticias"
-                        size="small"
+                        size="medium"
                     />
                     <DeBlogHighlights
                         range={4}
@@ -46,13 +52,14 @@ export function HomePage() {
             <Grid
                 container
                 size={12}
-                
+                marginTop={4}
+                marginBottom={4}
                 justifyContent="center"
             >
-                <Grid size={10} sx={{...sSectionYellow, padding: SpacingSection.innerSpaceMd}}>
+                <Grid size={10} sx={{ ...sSectionYellow, padding: SpacingSection.innerSpaceMd }}>
                     <DeTitleSection
                         label="Nossos jogos"
-                        size="small"
+                        size="medium"
                         variant="reverse"
                     />
                     <Grid
@@ -63,6 +70,7 @@ export function HomePage() {
                             justifyContent: "center",
                             gap: "12px",
                             flexWrap: "wrap",
+                            padding: "0 20px",
                         }}
                     >
                         <DeCard
@@ -70,7 +78,26 @@ export function HomePage() {
                             size={3}
                             variant="model1"
                         />
+                        <DeBtn
+                            label="Veja mais"
+                            variant="reverse"
+                            action={() => { }}
+                        />
                     </Grid>
+                </Grid>
+
+            </Grid>
+            <Grid
+                container
+                size={12}
+                sx={SectionArea}
+                justifyContent="center"
+            >
+                <Grid size={10}>
+                    <DeTitleSection
+                        label="Eventos"
+                        size="medium"
+                    />
                 </Grid>
 
             </Grid>

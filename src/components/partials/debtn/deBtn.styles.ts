@@ -12,7 +12,7 @@ export const deBtnStyle: SxProps<Theme> = {
 
     "&.default":{
         color: Colors.dark,
-        backgroundColor: Colors.basecolor,
+        backgroundColor: Colors.primary,
 
         "&:hover": {
             backgroundColor: Colors.dark,
@@ -25,7 +25,7 @@ export const deBtnStyle: SxProps<Theme> = {
         backgroundColor: Colors.dark,
 
         "&:hover": {
-            backgroundColor: Colors.basecolor,
+            backgroundColor: Colors.secondary,
             color: Colors.dark,
         }
     },

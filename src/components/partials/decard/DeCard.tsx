@@ -22,9 +22,9 @@ export function DeCard(props: IDeCardProps) {
                     >
                         <Grid
                             sx={sContainerTypoCard}
+                            className="cardLabel"
                         >
                             <Typography
-                                // variant="h6"
                                 component="span"
                                 fontWeight="bold"
                                 color={Colors.terciary}
