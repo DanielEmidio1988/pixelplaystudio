@@ -14,24 +14,4 @@ export const sTitleSection: SxProps<Theme> = {
     "&.reverse": {
         color: Colors.black,
     },
-     
-}
-
-export const sTitleSectionShadow: SxProps<Theme> = {
-    position: "absolute",
-    display: "inline-block",
-    width: "100%",
-    top: 3,
-    left: 5,
-    color: Colors.secondary,
-    opacity: 0.1,
-    zIndex: -1,  
-    cursor: "default",
-    transform: "scale(1.2)",
-
-    "&.reverse": {
-        color: Colors.secondary,
-        display: "inline-block",
-        opacity: 1,
-    } 
 }
