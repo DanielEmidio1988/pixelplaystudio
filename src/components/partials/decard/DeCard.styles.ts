@@ -11,43 +11,87 @@ export const StyledCard = styled(Grid, {
     cursor: "pointer",
     transition: "all 0.3s ease-in-out",
 
-    "&::after": {
-        content: '""',
-        position: "absolute",
-        zIndex: -1,
-        left: 10,
-        top: 14,
-        width: "96%",
-        height: "96%",
-        clipPath: "polygon(24% 0%, 100% 0%, 76% 100%, 0% 100%)",
-        backgroundImage: `url(${bgImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        filter: "grayscale(100%)",
-        transition: "all 0.3s ease-in-out",
+    "&.cardmodel1": {
+        "&::after": {
+            content: '""',
+            position: "absolute",
+            zIndex: -1,
+            left: 10,
+            top: 14,
+            width: "96%",
+            height: "96%",
+            clipPath: "polygon(24% 0%, 100% 0%, 76% 100%, 0% 100%)",
+            backgroundImage: `url(${bgImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            filter: "grayscale(100%)",
+            transition: "all 0.3s ease-in-out",
+        },
+
+        "&:hover::after": {
+            left: 0,
+            top: 0,
+            filter: "none",
+        },
+
+        "&::before": {
+            content: '""',
+            position: "absolute",
+            zIndex: -2,
+            bottom: 0,
+            right: 0,
+            width: "96%",
+            height: "96%",
+            clipPath: "polygon(24% 0%, 100% 0%, 76% 100%, 0% 100%)",
+            backgroundColor: Colors.secondary,
+        },
+
+        "&:hover .cardLabel": {
+            display: "none",
+        },
     },
 
-    "&:hover::after": {
-        left: 0,
-        top: 0,
-        filter: "none",
-    },
+    "&.cardmodel2": {
+        height: "60vh",
+        "&::after": {
+            content: '""',
+            position: "absolute",
+            zIndex: -1,
+            left: "2%",
+            top: "2%",
+            width: "96%",
+            height: "96%",
+            clipPath: "polygon(0 0, 96% 0, 100% 10%, 100% 100%, 4% 100%, 0 90%)",
+            backgroundImage: `url(${bgImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            // filter: "grayscale(100%)",
+            transition: "all 0.3s ease-in-out",
+        },
 
-    "&::before": {
-        content: '""',
-        position: "absolute",
-        zIndex: -2,
-        bottom: 0,
-        right: 0,
-        width: "96%",
-        height: "96%",
-        clipPath: "polygon(24% 0%, 100% 0%, 76% 100%, 0% 100%)",
-        backgroundColor: Colors.secondary,
-    },
+        "&:hover::after": {
+            left: 0,
+            top: 0,
+            // filter: "none",
+        },
 
-    "&:hover .cardLabel": {
-        display: "none",
+        "&::before": {
+            content: '""',
+            position: "absolute",
+            zIndex: -2,
+            bottom: 0,
+            right: 0,
+            width: "98%",
+            height: "98%",
+            clipPath: "polygon(0 0, 96% 0, 100% 10%, 100% 100%, 4% 100%, 0 90%)",
+            backgroundColor: Colors.secondary,
+        },
+
+        "&:hover .cardLabel": {
+            display: "none",
+        },
     },
 }));
 

@@ -20,18 +20,21 @@ export function DeCard(props: IDeCardProps) {
                         className={props.variant ? `card${props.variant}` : "carddefault"}
                         bgImage={item.image}
                     >
-                        <Grid
-                            sx={sContainerTypoCard}
-                            className="cardLabel"
-                        >
-                            <Typography
-                                component="span"
-                                fontWeight="bold"
-                                color={Colors.terciary}
+                        {item.label && (
+                            <Grid
+                                sx={sContainerTypoCard}
+                                className="cardLabel"
                             >
-                                {item.label}
-                            </Typography>
-                        </Grid>
+                                <Typography
+                                    component="span"
+                                    fontWeight="bold"
+                                    color={Colors.terciary}
+                                >
+                                    {item.label}
+                                </Typography>
+                            </Grid>
+                        )}
+
                     </StyledCard>
                 )
             })}

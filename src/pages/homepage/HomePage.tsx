@@ -6,6 +6,7 @@ import twiligthnexusposter from "../../assets/gallery/homepage/twilightnexus.png
 import aethercoreposter from "../../assets/gallery/homepage/aethercore.png";
 import luminaposter from "../../assets/gallery/homepage/lumina.jpeg";
 import wastelandriders from "../../assets/gallery/homepage/wastelandriders.png";
+import bannereventphantom from "../../assets/gallery/homepage/ligaphantombanner.png";
 import { sSectionYellow, SpacingSection } from "../../assets/styles/MainStyle";
 import { DeCard } from "../../components/partials/decard/DeCard";
 import { DeBtn } from "../../components/partials/debtn/deBtn";
@@ -29,6 +30,12 @@ export function HomePage() {
             label: "Wasteland Riders",
         },
     ];
+
+    const eventsBanners = [
+        {
+            image: bannereventphantom,
+        }
+    ]
 
     return (
         <Grid container size={12}>
@@ -98,6 +105,26 @@ export function HomePage() {
                         label="Eventos"
                         size="medium"
                     />
+                    <Grid
+                        container
+                        size={12}
+                        sx={{
+                            display: "flex",
+                            justifyContent: "center",
+                            gap: "12px",
+                            padding: "0 20px",
+                        }}
+                    >
+                        <DeCard
+                            items={eventsBanners}
+                            size={8}
+                            variant="model2"
+                        />
+                        <DeBtn
+                            label="Veja mais"
+                            action={() => { }}
+                        />
+                    </Grid>
                 </Grid>
 
             </Grid>
