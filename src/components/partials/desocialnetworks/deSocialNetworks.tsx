@@ -57,14 +57,14 @@ export function DeSocialNetworks(props: IDeSocialNetworksProps) {
                         >
                             {React.createElement(button.icon, {
                                 sx: {
-                                    fill: Colors.white,
+                                    fill: props.reverse ? Colors.dark : Colors.white,
                                     height: sizeIcons[props.size],
                                     width: sizeIcons[props.size],
                                     cursor: "pointer",
                                     margin: 0,
 
                                     "&:hover": {
-                                        fill: Colors.primary,
+                                        fill: props.reverse ? Colors.secondary : Colors.primary,
                                     }
                                 }
                             })}
