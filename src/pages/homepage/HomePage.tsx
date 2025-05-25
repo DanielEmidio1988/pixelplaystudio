@@ -7,9 +7,11 @@ import aethercoreposter from "../../assets/gallery/homepage/aethercore.png";
 import luminaposter from "../../assets/gallery/homepage/lumina.jpeg";
 import wastelandriders from "../../assets/gallery/homepage/wastelandriders.png";
 import bannereventphantom from "../../assets/gallery/homepage/ligaphantombanner.png";
+import trabalheconosco from "../../assets/gallery/homepage/trabalheconosco.jpg";
 import { sSectionYellow, SpacingSection } from "../../assets/styles/MainStyle";
 import { DeCard } from "../../components/partials/decard/DeCard";
 import { DeBtn } from "../../components/partials/debtn/deBtn";
+import { DeSection } from "../../components/partials/deSection/DeSection";
 
 export function HomePage() {
     const gamesData = [
@@ -123,6 +125,38 @@ export function HomePage() {
                         <DeBtn
                             label="Veja mais"
                             action={() => { }}
+                        />
+                    </Grid>
+                </Grid>
+
+            </Grid>
+            <Grid
+                container
+                size={12}
+                sx={SectionArea}
+                justifyContent="center"
+            >
+                <Grid size={10}>
+                    <Grid
+                        container
+                        size={12}
+                        sx={{
+                            display: "flex",
+                            justifyContent: "center",
+                            gap: "12px",
+                            padding: "0 20px",
+                        }}
+                    >
+                        <DeSection 
+                            image={trabalheconosco}
+                            content={`
+                                <h2>Trabalhe conosco!</h2>
+                                <br>
+                                <p>Junte-se à PixelArt e vamos transformar a comunidade gamer, proporcionando experiências incriveis.</p>
+                            `}
+                            showActionButton
+                            labelActionButton="Conheça nossas vagas"
+                            urlActionButton="/"
                         />
                     </Grid>
                 </Grid>
