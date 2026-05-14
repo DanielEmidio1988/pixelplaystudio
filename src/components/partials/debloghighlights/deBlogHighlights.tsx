@@ -1,14 +1,14 @@
 import { Grid, Typography } from "@mui/material";
-import { DeBlogHighlightsProps } from "./deBlogHighlights.types";
-import { LastNewBlog, cardsNewBlog, lastNewsBlogContent } from "./deBlogHighlights.style";
+import { DeBlogHighlightsProps } from "./DeBlogHighlights.types";
+import { LastNewBlog, cardsNewBlog, lastNewsBlogContent } from "./DeBlogHighlights.styles";
 import imgblog1 from "../../../assets/gallery/blog/imgblog1.png";
 import imgblog2 from "../../../assets/gallery/blog/imgblog2.jpg";
 import imgblog3 from "../../../assets/gallery/blog/imgblog3.png";
 import imgblog4 from "../../../assets/gallery/blog/imgblog4.jpg";
-import { DeBtn } from "../debtn/deBtn";
+import { DeBtn } from "../debtn/DeBtn";
 
 export function DeBlogHighlights(props: DeBlogHighlightsProps) {
-    const newsBlog = [
+    const newsBlog = [ // Todo: provisório
         {
             img: imgblog2,
             title: "Festival do ouro: Promoções Épicas na Loja!",

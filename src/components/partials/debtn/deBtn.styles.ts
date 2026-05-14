@@ -1,5 +1,39 @@
 import { SxProps, Theme } from "@mui/material/styles";
-import { Colors } from "../../../assets/styles/MainStyle";
+import { Colors, MainLayout } from "../../../assets/styles/MainStyle";
+import { CSSProperties } from "react";
+
+export const baseButton: CSSProperties = {
+    padding: "16px 40px",
+    borderRadius: 9999,
+    fontWeight: "bold",
+}
+
+export const btnDefault: CSSProperties = {
+    backgroundColor: MainLayout.colors.primary,
+    color: MainLayout.colors.primaryStrong,
+    fontFamily: MainLayout.fonts.typography.headline,
+}
+
+export const btnDark: CSSProperties = {
+    backgroundColor: MainLayout.colors.primary,
+    color: MainLayout.colors.primaryStrong,
+    fontFamily: MainLayout.fonts.typography.headline,
+}
+
+export const btnLight: CSSProperties = {
+    backgroundColor: MainLayout.colors.primary,
+    color: MainLayout.colors.primaryStrong,
+    fontFamily: MainLayout.fonts.typography.headline,
+}
+
+export const btnWhite: CSSProperties = {
+    backgroundColor: MainLayout.colors.primary,
+    color: MainLayout.colors.primaryStrong,
+    fontFamily: MainLayout.fonts.typography.headline,
+}
+
+
+// APAGAR 
 
 export const deBtnStyle: SxProps<Theme> = {
     position: "relative",

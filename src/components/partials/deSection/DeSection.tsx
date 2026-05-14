@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import { IDeSection } from "./DeSection.types";
-import { DeBtn } from "../debtn/deBtn";
+import { DeBtn } from "../debtn/DeBtn";
 import { useNavigate } from "react-router-dom";
 import { sDeSection } from "./DeSection.styles";
 

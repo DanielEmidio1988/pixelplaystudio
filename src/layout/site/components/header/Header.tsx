@@ -3,13 +3,13 @@ import { ButtonGroup, Grid, Button, Typography } from "@mui/material";
 import logo from "../../../../assets/gallery/utils/logo.png";
 import bannerHomeAetherCore from "../../../../assets/gallery/banners/bannerHomeAetherCore.png";
 import { Colors } from "../../../../assets/styles/MainStyle";
-import { sHeader } from "./Header.style";
-import { DeBtn } from "../../../../components/partials/debtn/deBtn";
+import { sHeader } from "./Header.styles";
+import { DeBtn } from "../../../../components/partials/debtn/DeBtn";
 
 export function Header() {
     // const location = useLocation();
     const navigation = useNavigate();
-    const bannerInfo = {
+    const bannerInfo = { // Todo: provisório
         backgroundImage: bannerHomeAetherCore,
         title: "AetherCore 1.8",
         subtitle: "Eclipse da Mente:",

@@ -1,6 +1,6 @@
 import { Typography, Grid } from "@mui/material"
-import { IDeTitleSectionProps } from "./deTitleSection.types";
-import { sTitleSection } from "./deTitleSection.style";
+import { IDeTitleSectionProps } from "./DeTitleSection.types";
+import { sTitleSection } from "./DeTitleSection.styles";
 
 export function DeTitleSection(props: IDeTitleSectionProps) {
     const fontSize = {

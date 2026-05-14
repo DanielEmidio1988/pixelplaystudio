@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import { SectionArea } from "./HomePage.style";
-import { DeBlogHighlights } from "../../components/partials/debloghighlights/deBlogHighlights";
-import { DeTitleSection } from "../../components/partials/detitlesection/deTitleSection";
+import { DeBlogHighlights } from "../../components/partials/debloghighlights/DeBlogHighlights";
+import { DeTitleSection } from "../../components/partials/detitlesection/DeTitleSection";
 import twiligthnexusposter from "../../assets/gallery/homepage/twilightnexus.png";
 import aethercoreposter from "../../assets/gallery/homepage/aethercore.png";
 import luminaposter from "../../assets/gallery/homepage/lumina.jpeg";
@@ -10,7 +10,7 @@ import bannereventphantom from "../../assets/gallery/homepage/ligaphantombanner.
 import trabalheconosco from "../../assets/gallery/homepage/trabalheconosco.jpg";
 import { sSectionYellow, SpacingSection } from "../../assets/styles/MainStyle";
 import { DeCard } from "../../components/partials/decard/DeCard";
-import { DeBtn } from "../../components/partials/debtn/deBtn";
+import { DeBtn } from "../../components/partials/debtn/DeBtn";
 import { DeSection } from "../../components/partials/deSection/DeSection";
 
 export function HomePage() {

@@ -5,7 +5,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import XIcon from '@mui/icons-material/X';
 import { Colors } from '../../../assets/styles/MainStyle';
-import { IDeSocialNetworksProps } from './deSocialNetworks.types';
+import { IDeSocialNetworksProps } from './DeSocialNetworks.types';
 
 
 export function DeSocialNetworks(props: IDeSocialNetworksProps) {

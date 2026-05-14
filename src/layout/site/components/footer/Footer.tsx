@@ -4,7 +4,7 @@ import HeadphonesIcon from '@mui/icons-material/Headphones';
 import MailIcon from '@mui/icons-material/Mail';
 import { Colors } from "../../../../assets/styles/MainStyle";
 import logo from "../../../../assets/gallery/utils/logoreverse.png"
-import { DeSocialNetworks } from "../../../../components/partials/desocialnetworks/deSocialNetworks";
+import { DeSocialNetworks } from "../../../../components/partials/desocialnetworks/DeSocialNetworks";
 
 export function Footer(){
 
