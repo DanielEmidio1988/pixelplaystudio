@@ -12,6 +12,7 @@ export interface FontConfig {
 export interface ColorPalette {
     white: string;
     black: string;
+    gray: string;
     error: string;
     success: string;
     neutral: string;

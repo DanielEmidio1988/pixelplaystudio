@@ -4,3 +4,10 @@ export interface IdeBtnProps {
     size?: "small" | "medium" | "large" | "extralarge";
     action: () => void;
 }
+
+export interface IDeBtnProps {
+    label: string;
+    variant?: "default" | "dark" | "light" | "white";
+    fontSize?: "default" | "high"; 
+    action: () => void;
+}

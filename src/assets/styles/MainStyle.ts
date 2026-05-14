@@ -32,6 +32,7 @@ export const BaseLayout: Record<string, string | Record<string, string>> = {
 export const Colors: ColorPalette = {
     white: "#FFF",
     black: "#000",
+    gray: "#F2EFFB",
     error: "",
     success: "",
     neutral: "#0A0A12",
