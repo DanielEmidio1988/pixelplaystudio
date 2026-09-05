@@ -1,4 +1,4 @@
-export interface IdeBtnProps {
+export interface IdeBtnProps { // Todo: Apagar
     label: string;
     variant?: "default" | "reverse";
     size?: "small" | "medium" | "large" | "extralarge";
@@ -7,7 +7,10 @@ export interface IdeBtnProps {
 
 export interface IDeBtnProps {
     label: string;
-    variant?: "default" | "dark" | "light" | "white";
-    fontSize?: "default" | "high"; 
+    variant: "text" | "contained" | "outlined";
     action: () => void;
+    layoutBtn: LayoutBtn; 
+    fontSize?: "default" | "high"; 
 }
+
+type LayoutBtn = "default" | "dark" | "light" | "white";

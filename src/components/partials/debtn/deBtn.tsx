@@ -1,36 +1,36 @@
-import { Button } from "@mui/material";
-import { IdeBtnProps } from "./DeBtn.types";
-import { deBtnStyle, baseButton, btnDefault } from "./DeBtn.styles";
+import {
+    IDeBtnProps,
+} from "./DeBtn.types";
+import {
+    baseButton,
+    btnDefault,
+    btnDark,
+    btnLight,
+    btnWhite
+} from "./DeBtn.styles";
 import { CSSProperties } from "react";
+import { Button } from "@mui/material";
 
-export function DeBtn(props: IdeBtnProps) {
+export function DeBtn(props: IDeBtnProps) {
+
+    const variantBtn = {
+        default: btnDefault,
+        dark: btnDark,
+        light: btnLight,
+        white: btnWhite,
+    }
 
     const styleBtn: CSSProperties = {
-        ...baseButton, 
-        ...btnDefault
+        ...baseButton,
     }
 
     return (
-        <>
-            <Button
-                className={`${props.variant ? String(props.variant) : "default"
-                    }
-            ${props.size ? String(props.size) : "medium"
-                    }
-            `
-                }
-                action={props.action}
-                sx={deBtnStyle}
-            >
-                {props.label}
-            </Button>
-            <button
-                className=""
-                onClick={props.action}
-                style={styleBtn}
-            >
-                {props.label}
-            </button>
-        </>
+         <Button
+            sx={styleBtn}
+            action={props.action}
+            variant={props.variant}
+        >
+            {props.label}
+        </Button>
     )
 }

@@ -8,7 +8,7 @@ import luminaposter from "../../assets/gallery/homepage/lumina.jpeg";
 import wastelandriders from "../../assets/gallery/homepage/wastelandriders.png";
 import bannereventphantom from "../../assets/gallery/homepage/ligaphantombanner.png";
 import trabalheconosco from "../../assets/gallery/homepage/trabalheconosco.jpg";
-import { sSectionYellow, SpacingSection } from "../../assets/styles/MainStyle";
+import { SpacingSection } from "../../assets/styles/MainStyle";
 import { DeCard } from "../../components/partials/decard/DeCard";
 import { DeBtn } from "../../components/partials/debtn/DeBtn";
 import { DeSection } from "../../components/partials/deSection/DeSection";
@@ -65,7 +65,7 @@ export function HomePage() {
                 marginBottom={4}
                 justifyContent="center"
             >
-                <Grid size={10} sx={{ ...sSectionYellow, padding: SpacingSection.innerSpaceMd }}>
+                <Grid size={10} sx={{ padding: SpacingSection.innerSpaceMd }}>
                     <DeTitleSection
                         label="Nossos jogos"
                         size="medium"
