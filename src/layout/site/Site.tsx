@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import { Outlet } from "react-router-dom";
-import { Header } from "./components/header/Header";
-import { Footer } from "./components/footer/Footer";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 import { Colors } from "../../assets/styles/MainStyle";
 
 export function SiteLayout() {
