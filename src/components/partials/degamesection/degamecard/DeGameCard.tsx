@@ -1,7 +1,8 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { Box, Button, Card, CardMedia, Typography } from "@mui/material";
+import { Box, Card, CardMedia, Typography } from "@mui/material";
 import { colors } from "../../../../layout/theme";
 import { IDeGameCardProps } from "./DeGameCard.types";
+import { DeBtn } from "../../debtn/DeBtn";
 
 
 export default function DeGameCard({
@@ -10,14 +11,15 @@ export default function DeGameCard({
   image,
   variant,
   ctaLabel,
+  layoutBtn,
   accentColor = colors.secondary,
 }: IDeGameCardProps) {
   const isLarge = variant === "large";
   const isMedium = variant === "medium";
+  const isSmall = variant === "small";
 
   const padding = isLarge ? 5 : isMedium ? 4 : 3;
   const titleVariant = isLarge ? "h3" : isMedium ? "h4" : "h5";
-  const ctaSize = isLarge ? "medium" : "small";
 
   return (
     <Card
@@ -57,19 +59,24 @@ export default function DeGameCard({
           p: padding,
           display: "flex",
           flexDirection: "column",
-          gap: 1,
+          alignItems: "flex-start",
+          gap: 0,
         }}
       >
-        <Typography
-          variant="overline"
-          sx={{
-            color: accentColor,
-            textShadow: `0 0 20px ${accentColor}cc`,
-            letterSpacing: "0.225em",
-          }}
-        >
-          {genre}
-        </Typography>
+        {isLarge && (
+          <Typography
+            variant="overline"
+            sx={{
+              color: accentColor,
+              textShadow: `0 0 20px ${accentColor}cc`,
+              letterSpacing: "0.225em",
+              marginBottom: 0,
+            }}
+          >
+            {genre}
+          </Typography>
+        )}
+
 
         <Typography
           variant={titleVariant}
@@ -82,37 +89,33 @@ export default function DeGameCard({
           {title}
         </Typography>
 
-        {isLarge && ctaLabel ? (
-          <Button
-            variant="contained"
-            color="secondary"
-            size={ctaSize}
+        {isSmall && (
+          <Typography
+            variant="body2"
+            fontWeight="light"
             sx={{
-              alignSelf: "flex-start",
-              color: "#005359",
-              fontFamily: '"Manrope", sans-serif',
-              fontWeight: 700,
-              boxShadow: `0 0 10px ${colors.glowSecondary}`,
+              color: accentColor,
+              textShadow: `0 0 20px ${accentColor}cc`,
+              marginBottom: "8px"
             }}
           >
-            {ctaLabel}
-          </Button>
-        ) : (
-          <Button
-            endIcon={<ArrowForwardIcon sx={{ color: colors.primary, fontSize: 16 }} />}
-            sx={{
-              alignSelf: "flex-start",
-              color: colors.primary,
-              p: 0,
-              fontFamily: '"Manrope", sans-serif',
-              fontWeight: 700,
-              fontSize: "1rem",
-              "&:hover": { background: "transparent", opacity: 0.8 },
-            }}
-          >
-            Saiba Mais
-          </Button>
+            {genre}
+          </Typography>
         )}
+
+
+        <DeBtn
+          variant={isLarge ? `contained` : `text`}
+          layoutBtn={layoutBtn}
+          size={variant}
+          label={ctaLabel}
+          action={() => { }}
+          {...isSmall && { 
+            uppercase: true,
+            underline: true,
+          }}
+          {...isMedium && { endIcon: (<ArrowForwardIcon sx={{ color: colors.primary, fontSize: 16 }} />) }}
+        />
       </Box>
     </Card>
   );

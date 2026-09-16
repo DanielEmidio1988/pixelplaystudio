@@ -1,11 +1,33 @@
 import LanguageIcon from "@mui/icons-material/Language";
-import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import { colors } from "../../../theme";
 import { FooterLinkList } from "./FooterLinkList";
 import { SocialIconLink } from "./SocialIconLink";
+import { DeBtn } from "../../../../components/partials/debtn/DeBtn";
 
 const shopLinks = ["Ofertas Diárias", "Probabilidades", "Troca de Itens", "Eventos Ativos"];
 const supportLinks = ["Central de Ajuda", "Problemas de Compra", "Política de Privacidade", "Termos de Serviço"];
+
+const socialLinks = [
+  {
+    url: "#",
+    ariaLabel: "linkedin-icon",
+    icon: <LinkedInIcon />
+  },
+  {
+    url: "#",
+    ariaLabel: "youtube-icon",
+    icon: <YouTubeIcon />
+  },
+  {
+    url: "#",
+    ariaLabel: "linkedin-icon",
+    icon: <InstagramIcon />
+  },
+]
 
 
 export default function Footer() {
@@ -49,45 +71,40 @@ export default function Footer() {
                 O hub definitivo para colecionáveis digitais de alto nível e experiências gacha em todo o multiverso.
               </Typography>
               <Box sx={{ display: "flex", gap: 3 }}>
-                {["Discord", "Twitter", "Instagram"].map((name) => (
-                  <SocialIconLink key={name} label={name} />
+                {socialLinks.map((link) => (
+                  <SocialIconLink 
+                    key={link.ariaLabel} 
+                    ariaLabel={link.ariaLabel}
+                    url={link.url}
+                    icon={link.icon} 
+                  />
                 ))}
               </Box>
             </Stack>
           </Grid>
 
-          <Grid size={{xs: 6, md: 2 }}>
+          <Grid size={{xs: 6, md: 3 }}>
             <FooterLinkList heading="Loja" links={shopLinks} />
           </Grid>
 
-          <Grid size={{xs: 6, md: 2 }}>
+          <Grid size={{xs: 6, md: 3 }}>
             <FooterLinkList heading="Suporte" links={supportLinks} />
           </Grid>
 
-          <Grid size={{xs: 6, md: 2 }}>
+          <Grid size={{xs: 6, md: 3 }}>
             <Stack gap={4}>
               <Typography variant="h6" sx={{ color: colors.textPrimary }}>
                 Idioma
               </Typography>
               <Stack gap={2}>
-                <Button
+                <DeBtn 
                   startIcon={<LanguageIcon sx={{ fontSize: 15 }} />}
-                  variant="outlined"
-                  sx={{
-                    backgroundColor: colors.surfaceSecondary,
-                    border: `1px solid ${colors.border}`,
-                    borderRadius: 9999,
-                    color: colors.textPrimary,
-                    justifyContent: "flex-start",
-                    px: 3,
-                    py: 1.5,
-                    fontSize: "0.875rem",
-                    fontFamily: '"Plus Jakarta Sans", sans-serif',
-                    "&:hover": { borderColor: colors.borderStrong, backgroundColor: colors.surface },
-                  }}
-                >
-                  Português (Brasil)
-                </Button>
+                  label="Português (Brasil)"
+                  variant="contained"
+                  layoutBtn="dark"
+                  size="small"
+                  action={() => {}}
+                />
                 <Typography
                   component="p"
                   sx={{

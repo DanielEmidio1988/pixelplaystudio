@@ -1,8 +1,10 @@
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
+import { Box, Container, Grid, Stack, } from "@mui/material";
 import { newsAethercore, newsTwilight, newsWasteland } from "../../../layout/theme/images";
 import { colors } from "../../../layout/theme";
 import DeNewsCard from "./DeNewsCard";
+import { DeBtn } from "../debtn/DeBtn";
+import DeSectionTitle from "../desectiontitle/DeSectionTitle";
 
 const articles = [
   {
@@ -40,33 +42,27 @@ export default function DeNewsSection() {
       <Container maxWidth="lg" sx={{ px: { xs: 3, md: 6 } }}>
         <Stack gap={8}>
           <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            <Typography variant="h2" sx={{ letterSpacing: "-0.05em", textTransform: "uppercase" }}>
-              ÚLTIMAS{" "}
-              <Box component="span" sx={{ color: colors.secondary }}>
-                NOTÍCIAS
-              </Box>
-            </Typography>
+            <DeSectionTitle
+              label="ULTIMAS"
+              accent="NOTÍCIAS"
+              description=""
+            />
 
-            <Button
+            <DeBtn 
+              variant="text"
+              layoutBtn="white"
+              size="large"
+              label="Ver Arquivo"
+              uppercase
               endIcon={<ArrowForwardIosIcon sx={{ fontSize: "0.7rem !important" }} />}
-              aria-label="Ver arquivo de notícias"
-              sx={{
-                color: colors.textMuted,
-                fontFamily: '"Plus Jakarta Sans", sans-serif',
-                fontWeight: 700,
-                fontSize: "0.875rem",
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                "&:hover": { color: colors.textPrimary, background: "transparent" },
-              }}
-            >
-              Ver Arquivo
-            </Button>
+              action={() => {}}
+            />
+
           </Box>
 
           <Grid container spacing={4}>
             {articles.map((article) => (
-              <Grid key={article.title} size={{xs: 12, sm: 6, md: 4}}>
+              <Grid key={article.title} size={{ xs: 12, sm: 6, md: 4 }}>
                 <DeNewsCard {...article} />
               </Grid>
             ))}

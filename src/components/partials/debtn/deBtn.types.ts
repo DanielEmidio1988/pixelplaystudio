@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface IDeBtnProps {
     label: string;
     variant: "text" | "contained" | "outlined";
@@ -5,6 +7,15 @@ export interface IDeBtnProps {
     action: () => void;
     layoutBtn: LayoutBtn; 
     fontSize?: "default" | "high"; 
+    endIcon?: ReactNode;
+    startIcon?: ReactNode;
+    uppercase?: boolean;
+    underline?: boolean;
+    reverse?: boolean;
 }
 
-type LayoutBtn = "default" | "dark" | "light" | "white";
+export type LayoutBtn = 
+    | "default" 
+    | "dark" 
+    | "light" 
+    | "white";

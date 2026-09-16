@@ -1,17 +1,20 @@
-import { Box, Button, Card, CardMedia, Chip, Stack, Typography } from "@mui/material";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { Box, Card, CardMedia, Chip, Stack, Typography } from "@mui/material";
 import { colors } from "../../../layout/theme";
 import { IDeNewsCardProps } from "./DeNewsSection.types";
+import { DeBtn } from "../debtn/DeBtn";
 
 export default function DeNewsCard(
-  { 
-    date, 
-    title, 
-    excerpt, 
-    image, 
-    tag, 
-    tagColor = colors.primary, 
-    tagTextColor = colors.primaryStrong 
+  {
+    date,
+    title,
+    excerpt,
+    image,
+    tag,
+    tagColor = colors.primary,
+    tagTextColor = colors.primaryStrong
   }: IDeNewsCardProps) {
+
   return (
     <article>
       <Stack gap={1}>
@@ -62,22 +65,24 @@ export default function DeNewsCard(
           {excerpt}
         </Typography>
 
-        <Button
-          endIcon={<Box component="span" sx={{ fontSize: "0.65rem", ml: 0.5, lineHeight: 1 }}>›</Box>}
-          size="small"
+        <Box
           sx={{
-            alignSelf: "flex-start",
-            color: colors.textPrimary,
-            p: 0,
-            fontFamily: '"Plus Jakarta Sans", sans-serif',
-            fontWeight: 700,
-            fontSize: "0.75rem",
-            letterSpacing: "0.08em",
-            "&:hover": { background: "transparent", opacity: 0.8 },
+            width: "100%",
+            display: "flex",
+            justifyContent: "flex-start"
           }}
         >
-          LER MAIS
-        </Button>
+          <DeBtn
+            variant="text"
+            layoutBtn="white"
+            size="small"
+            label="Ler mais"
+            uppercase
+            endIcon={<ArrowForwardIosIcon sx={{ fontSize: "0.7rem !important" }} />}
+            action={() => { }}
+          />
+        </Box>
+
       </Stack>
     </article>
   );

@@ -5,7 +5,7 @@ export interface IDeHeroBannerProps{
 export interface IBannerItem{
     img: string;
     eyebrow: string;
-    title: string;
+    title?: string;
     subtitle?: string;
     description: string;
     action?: IActionBtnBanner[];

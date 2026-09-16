@@ -3,13 +3,14 @@ import DeGameCard from "./degamecard/DeGameCard";
 import DeSectionTitle from "../desectiontitle/DeSectionTitle";
 import { colors } from "../../../layout/theme";
 import { gameAethercore, gameLumina, gameTwilightNexus, gameWasteland} from "../../../layout/theme/images";
+import { IDeGameCardProps } from "./degamecard/DeGameCard.types";
 
 
-const games = [
-  { title: "Twilight Nexus", genre: "RPG de Ação", image: gameTwilightNexus, variant: "large" as const, ctaLabel: "Baixar Agora", accentColor: colors.secondary },
-  { title: "Aethercore", genre: "Adrenaline", image: gameAethercore, variant: "medium" as const, accentColor: colors.primary },
-  { title: "Lumina", genre: "Aventura Puzzle", image: gameLumina, variant: "small" as const, accentColor: colors.primary },
-  { title: "Wasteland Riders", genre: "Corrida MMO", image: gameWasteland, variant: "small" as const, accentColor: colors.secondary },
+const games: IDeGameCardProps[] = [
+  { title: "Twilight Nexus", genre: "RPG de Ação", image: gameTwilightNexus, variant: "large" as const, ctaLabel: "Baixar Agora", accentColor: colors.secondary, layoutBtn: "light" },
+  { title: "Aethercore", image: gameAethercore, variant: "medium" as const, ctaLabel: "Saiba mais", accentColor: colors.primary, layoutBtn: "default" },
+  { title: "Lumina", genre: "Aventura Puzzle", image: gameLumina, variant: "small" as const, ctaLabel: "Detalhes", accentColor: colors.white, layoutBtn: "default" },
+  { title: "Wasteland Riders", genre: "Corrida MMO", image: gameWasteland, variant: "small" as const, ctaLabel: "Detalhes", accentColor: colors.white, layoutBtn: "light" },
 ];
 
 export default function DeGamesSection() {

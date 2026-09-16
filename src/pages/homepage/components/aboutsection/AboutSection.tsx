@@ -1,7 +1,8 @@
-import { Box, Button, Card, CardMedia, Container, Grid, Stack, Typography } from "@mui/material";
+import { Box, Card, CardMedia, Container, Grid, Stack, Typography } from "@mui/material";
 import { careerPhoto } from "../../../../layout/theme/images";
 import { colors } from "../../../../layout/theme";
 import { StatItem } from "./StatItem";
+import { DeBtn } from "../../../../components/partials/debtn/DeBtn";
 
 export default function AboutSection() {
   return (
@@ -52,21 +53,15 @@ export default function AboutSection() {
                 </Grid>
               </Grid>
 
-              <Button
+              <DeBtn 
                 variant="outlined"
                 size="large"
-                sx={{
-                  alignSelf: "flex-start",
-                  border: `2px solid rgba(223,142,255,0.5)`,
-                  color: colors.primary,
-                  px: 5,
-                  py: 2.25,
-                  boxShadow: `0 0 15px rgba(223,142,255,0.1)`,
-                  "&:hover": { border: `2px solid ${colors.primary}`, backgroundColor: "rgba(223,142,255,0.05)" },
-                }}
-              >
-                Saiba Mais
-              </Button>
+                label="Saiba Mais"
+                layoutBtn="default"
+                reverse
+                action={() => {}}
+              />
+
             </Stack>
           </Grid>
 
@@ -118,21 +113,14 @@ export default function AboutSection() {
                     Junte-se à Pixel Play e vamos transformar a comunidade gamer, proporcionando experiências incríveis
                     para milhões de pessoas ao redor do mundo.
                   </Typography>
-                  <Button
+                  <DeBtn 
                     variant="contained"
-                    fullWidth
-                    sx={{
-                      backgroundColor: colors.white,
-                      color: colors.background,
-                      fontFamily: '"Space Grotesk", sans-serif',
-                      fontWeight: 700,
-                      py: 2,
-                      boxShadow: "0 20px 25px -5px rgba(0,0,0,0.1)",
-                      "&:hover": { backgroundColor: "#e0e0e0" },
-                    }}
-                  >
-                    Ver Vagas
-                  </Button>
+                    size="large"
+                    reverse
+                    layoutBtn="white"
+                    label="Ver vagas"
+                    action={() => {}}
+                  />
                 </Box>
               </Card>
             </Box>

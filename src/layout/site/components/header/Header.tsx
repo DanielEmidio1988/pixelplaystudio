@@ -12,10 +12,35 @@ import {
   Typography,
 } from "@mui/material";
 import { colors } from "../../../theme";
+import { useNavigate } from "react-router-dom";
 
-const navLinks = ["JOGOS", "SOBRE", "EVENTOS", "LOJA", "BLOG"];
+const navLinks = [
+  {
+    label: "JOGOS",
+    url: "/games"
+  },
+  {
+    label: "SOBRE",
+    url: "/"
+  },
+  {
+    label: "EVENTOS",
+    url: "/"
+  },
+  {
+    label: "LOJA",
+    url: "/"
+  },
+  {
+    label: "BLOG",
+    url: "/"
+  }
+]
 
 export default function Header() {
+
+  const navigation = useNavigate();
+
   return (
     <AppBar
       position="sticky"
@@ -67,10 +92,12 @@ export default function Header() {
             sx={{ listStyle: "none", m: 0, p: 0, display: { xs: "none", md: "flex" } }}
           >
             {navLinks.map((link) => (
-              <li key={link}>
+              <li 
+                key={link.label}
+                onClick={() => navigation(link.url)}
+                style={{ cursor: "pointer" }}
+              >
                 <Typography
-                  component="a"
-                  href="#"
                   variant="button"
                   sx={{
                     color: colors.textSecondary,
@@ -82,7 +109,7 @@ export default function Header() {
                     transition: "color 0.2s",
                   }}
                 >
-                  {link}
+                  {link.label}
                 </Typography>
               </li>
             ))}
@@ -124,60 +151,3 @@ export default function Header() {
     </AppBar>
   );
 }
-
-
-// import { useNavigate } from "react-router-dom";
-// import { DeBtn } from "../../../../components/partials/debtn/DeBtn";
-// import { IMenuItem } from "./Header.types";
-// import { Grid } from "@mui/material";
-
-// const menuItem: IMenuItem[] = [
-//     {
-//         label: "Sobre",
-//         link: "/",
-//     },
-//     {
-//         label: "Jogos",
-//         link: "/",
-//     },
-//     {
-//         label: "Eventos",
-//         link: "/",
-//     },
-//     {
-//         label: "Loja",
-//         link: "/",
-//     },
-//     {
-//         label: "Blog",
-//         link: "/",
-//     }
-// ] 
-
-// export function Header() {
-
-//     const navigation = useNavigate();
-
-//     return (
-//         <Grid 
-//             component="header"
-//             className=""
-//         >
-//             <Grid 
-//                 className=""
-//                 data-name="HeaderLink"
-//             >
-//                 {menuItem && menuItem.map((menu) => {
-//                     return (
-//                         <DeBtn 
-//                             label={menu.label}
-//                             action={() => navigation(menu.link)}
-//                             variant="text"
-//                             layoutBtn="white"
-//                         />
-//                     )
-//                 })}
-//             </Grid>
-//         </Grid>
-//     );
-// }

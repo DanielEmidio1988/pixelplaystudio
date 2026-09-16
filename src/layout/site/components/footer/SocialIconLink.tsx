@@ -1,13 +1,14 @@
 import { Box } from "@mui/material";
 import { colors } from "../../../theme";
+import { ReactNode } from "react";
 
-export function SocialIconLink({ label }: { label: string }) {
+export function SocialIconLink({ ariaLabel, url, icon }: { ariaLabel: string, url: string, icon: ReactNode }) {
 
   return (
     <Box
       component="a"
-      href="#"
-      aria-label={label}
+      href={url}
+      aria-label={ariaLabel}
       sx={{
         width: 20,
         height: 20,
@@ -19,9 +20,7 @@ export function SocialIconLink({ label }: { label: string }) {
         transition: "color 0.2s",
       }}
     >
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
-        <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="1.5" fill="none" />
-      </svg>
+      {icon}
     </Box>
   );
 }

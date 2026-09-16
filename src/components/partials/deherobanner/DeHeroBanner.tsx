@@ -150,17 +150,20 @@ function DeHeroBannerItem({
 
                     {/* Heading */}
                     <Box>
-                        <Typography
-                            component="h1"
-                            variant="h1"
-                            sx={{
-                                color: colors.textPrimary,
-                                textShadow: `0 0 20px ${colors.glowPrimary}`,
-                                lineHeight: 1,
-                            }}
-                        >
-                            {banner.title}
-                        </Typography>
+                        
+                        {banner.title && (
+                            <Typography
+                                component="h1"
+                                variant="h1"
+                                sx={{
+                                    color: colors.textPrimary,
+                                    textShadow: `0 0 20px ${colors.glowPrimary}`,
+                                    lineHeight: 1,
+                                }}
+                            >
+                                {banner.title}
+                            </Typography>
+                        )}
 
                         {banner.subtitle && (
                             <Typography

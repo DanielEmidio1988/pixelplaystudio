@@ -14,6 +14,8 @@ const colors = {
   primaryStrong: "#4F006D",
 
   secondary: "#00EEFC",
+  secondaryStrong: "#005359",
+  
   tertiary: "#FF6B98",
 
   error: "#FF4D6D",
