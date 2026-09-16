@@ -1,13 +1,7 @@
-export interface IdeBtnProps { // Todo: Apagar
-    label: string;
-    variant?: "default" | "reverse";
-    size?: "small" | "medium" | "large" | "extralarge";
-    action: () => void;
-}
-
 export interface IDeBtnProps {
     label: string;
     variant: "text" | "contained" | "outlined";
+    size: "small" | "medium" | "large";
     action: () => void;
     layoutBtn: LayoutBtn; 
     fontSize?: "default" | "high"; 

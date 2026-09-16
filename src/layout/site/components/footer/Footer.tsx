@@ -10,7 +10,9 @@ const supportLinks = ["Central de Ajuda", "Problemas de Compra", "Política de P
 
 export default function Footer() {
   return (
-    <Box
+    <Grid
+      container
+      size={12}
       component="footer"
       sx={{
         backgroundColor: colors.backgroundSecondary,
@@ -34,7 +36,7 @@ export default function Footer() {
       />
 
       <Container maxWidth="xl" sx={{ px: { xs: 3, md: 6 } }}>
-        <Grid container spacing={8}>
+        <Grid container size={12} spacing={8}>
           <Grid size={{xs: 12, md: 3 }}>
             <Stack gap={3}>
               <Typography
@@ -104,6 +106,6 @@ export default function Footer() {
           </Grid>
         </Grid>
       </Container>
-    </Box>
+    </Grid>
   );
 }
