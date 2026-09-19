@@ -17,6 +17,7 @@ const colors = {
   secondaryStrong: "#005359",
   
   tertiary: "#FF6B98",
+  tertiaryStrong: "#7c0227",
 
   error: "#FF4D6D",
   success: "#00EEFC",

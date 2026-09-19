@@ -13,33 +13,33 @@ import {
 } from "@mui/material";
 import { colors } from "../../../theme";
 import { useNavigate } from "react-router-dom";
-
-const navLinks = [
-  {
-    label: "JOGOS",
-    url: "/games"
-  },
-  {
-    label: "SOBRE",
-    url: "/"
-  },
-  {
-    label: "EVENTOS",
-    url: "/"
-  },
-  {
-    label: "LOJA",
-    url: "/"
-  },
-  {
-    label: "BLOG",
-    url: "/"
-  }
-]
+import { routesMap } from "../../../../components/routercomponent/Routes";
 
 export default function Header() {
 
   const navigation = useNavigate();
+  const navLinks = [
+    {
+      label: "JOGOS",
+      url: routesMap.games
+    },
+    {
+      label: "SOBRE",
+      url: routesMap.home,
+    },
+    {
+      label: "EVENTOS",
+      url: routesMap.home,
+    },
+    {
+      label: "LOJA",
+      url: routesMap.home,
+    },
+    {
+      label: "BLOG",
+      url: routesMap.home,
+    }
+  ]
 
   return (
     <AppBar
@@ -69,7 +69,7 @@ export default function Header() {
         <Stack direction="row" alignItems="center" gap={6}>
           <Typography
             component="a"
-            href="/"
+            href={routesMap.home}
             variant="h4"
             aria-label="Pixel Play - Ir para home"
             sx={{
@@ -92,7 +92,7 @@ export default function Header() {
             sx={{ listStyle: "none", m: 0, p: 0, display: { xs: "none", md: "flex" } }}
           >
             {navLinks.map((link) => (
-              <li 
+              <li
                 key={link.label}
                 onClick={() => navigation(link.url)}
                 style={{ cursor: "pointer" }}

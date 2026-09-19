@@ -36,7 +36,7 @@ function DeHeroBannerItem({
             aria-label={`Destaque — ${banner.title}`}
             sx={{
                 position: "relative",
-                minHeight: 800,
+                minHeight: "100vh",
                 height: "100%",
                 display: "flex",
                 alignItems: "center",

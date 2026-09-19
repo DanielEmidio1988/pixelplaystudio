@@ -15,7 +15,13 @@ const games: IDeGameCardProps[] = [
 
 export default function DeGamesSection() {
   return (
-    <Grid container size={12} component="section" aria-label="Nosso Universo" sx={{ py: 16, position: "relative" }}>
+    <Grid 
+      container 
+      size={12} 
+      component="section" 
+      aria-label="Nosso Universo" 
+      sx={{ py: 16, position: "relative" }}
+    >
       <Box
         aria-hidden
         sx={{

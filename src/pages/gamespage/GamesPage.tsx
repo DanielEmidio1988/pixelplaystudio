@@ -2,6 +2,8 @@ import { Grid } from "@mui/material";
 import DeHeroBanner from "../../components/partials/deherobanner/DeHeroBanner";
 import { IBannerItem } from "../../components/partials/deherobanner/DeHeroBanner.types";
 import heroBackground from "../../assets/gallery/gamespage/banner.png"
+import { Portfolio } from "./components/portfolio/Portfolio";
+import DeNewsSection from "../../components/partials/denewssection/DeNewsSection";
 
 export function GamesPage() {
 
@@ -17,6 +19,8 @@ export function GamesPage() {
             <DeHeroBanner
                 banners={banners}
             />
+            <Portfolio />
+            <DeNewsSection />
         </Grid>
     )
 }

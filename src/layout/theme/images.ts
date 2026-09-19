@@ -9,6 +9,11 @@ import newsWasteland from "../../assets/gallery/homepage/newsWasteland.png";
 import eventEclipse from "../../assets/gallery/homepage/eventEclipse.png";
 import eventLumina from "../../assets/gallery/homepage/eventLumina.png";
 import eventNeonRally from "../../assets/gallery/homepage/eventNeonRally.png";
+import cardgameaethercore from "../../assets/gallery/gamespage/gameaethercore.png";
+import cardgamelumina from "../../assets/gallery/gamespage/gamelumina.png";
+import cardgamewasteland from "../../assets/gallery/gamespage/gamewasteland.png";
+import cardgametwilight from "../../assets/gallery/gamespage/gametwilightnexus.png";
+import error404img from "../../assets/gallery/utils/404error.png"
 
 export {
     gameAethercore,
@@ -21,5 +26,10 @@ export {
     newsWasteland,
     eventEclipse,
     eventLumina,
-    eventNeonRally
+    eventNeonRally,
+    cardgameaethercore,
+    cardgamelumina,
+    cardgamewasteland,
+    cardgametwilight,
+    error404img,
 }
