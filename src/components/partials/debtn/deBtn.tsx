@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
-import { IDeBtnProps } from "./DeBtn.types";
 import services from "./DeBtn.services";
 import { colors } from "../../../layout/theme";
+import { IDeBtnProps } from "./DeBtn.types";
 
 export function DeBtn(props: IDeBtnProps) {
 
