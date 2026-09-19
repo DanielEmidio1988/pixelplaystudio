@@ -1,23 +1,42 @@
 import { Button } from "@mui/material";
-import { IdeBtnProps } from "./deBtn.types";
-import { deBtnStyle } from "./deBtn.styles";
+import { IDeBtnProps } from "./DeBtn.types";
+import services from "./DeBtn.services";
+import { colors } from "../../../layout/theme";
 
-export function DeBtn(props: IdeBtnProps){
+export function DeBtn(props: IDeBtnProps) {
+
+    const isUnderline =
+        props.variant === "text" &&
+        props.underline && {
+            textDecoration: "underline",
+            textDecorationColor: props.layoutBtn === "light" ? colors.secondary : colors.primary,
+            textDecorationThickness: "2px",
+            textUnderlineOffset: "4px",
+            color: colors.white,
+        };
 
     return (
         <Button
-            className={`${
-                props.variant ? String(props.variant) : "default"
-            }
-            ${
-                props.size ? String(props.size) : "medium"
-            }
-            `
-            }
-            action={props.action}
-            sx={deBtnStyle}
+            variant={props.variant}
+            size={props.size}
+            onClick={props.action}
+            startIcon={props.startIcon}
+            endIcon={props.endIcon}
+            sx={{
+                ...services.getLayoutBtn(
+                    props.variant,
+                    props.layoutBtn,
+                    props.reverse,
+                ),
+
+                ...isUnderline,
+
+                textTransform: props.uppercase
+                    ? "uppercase"
+                    : "none",
+            }}
         >
             {props.label}
         </Button>
-    )
+    );
 }

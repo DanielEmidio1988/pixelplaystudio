@@ -1,109 +1,153 @@
+import SearchIcon from "@mui/icons-material/Search";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import {
+  AppBar,
+  Box,
+  IconButton,
+  InputAdornment,
+  OutlinedInput,
+  Stack,
+  Toolbar,
+  Typography,
+} from "@mui/material";
+import { colors } from "../../../theme";
 import { useNavigate } from "react-router-dom";
-import { ButtonGroup, Grid, Button, Typography } from "@mui/material";
-import logo from "../../../../assets/gallery/utils/logo.png";
-import bannerHomeAetherCore from "../../../../assets/gallery/banners/bannerHomeAetherCore.png";
-import { Colors } from "../../../../assets/styles/MainStyle";
-import { sHeader } from "./Header.style";
-import { DeBtn } from "../../../../components/partials/debtn/deBtn";
+import { routesMap } from "../../../../components/routercomponent/Routes";
 
-export function Header() {
-    // const location = useLocation();
-    const navigation = useNavigate();
-    const bannerInfo = {
-        backgroundImage: bannerHomeAetherCore,
-        title: "AetherCore 1.8",
-        subtitle: "Eclipse da Mente:",
-        description: "O Loop Zero começou. Enfrente simulações corrompidas por Host Zero/9. Skins, coop e dados espectrais te esperam!",
-        buttonText: "SAIBA MAIS"
-    };
+export default function Header() {
 
-    return (
-        <Grid
-            component="header"
+  const navigation = useNavigate();
+  const navLinks = [
+    {
+      label: "JOGOS",
+      url: routesMap.games
+    },
+    {
+      label: "SOBRE",
+      url: routesMap.home,
+    },
+    {
+      label: "EVENTOS",
+      url: routesMap.home,
+    },
+    {
+      label: "LOJA",
+      url: routesMap.home,
+    },
+    {
+      label: "BLOG",
+      url: routesMap.home,
+    }
+  ]
+
+  return (
+    <AppBar
+      position="sticky"
+      elevation={0}
+      sx={{
+        backdropFilter: "blur(12px)",
+        backgroundColor: "rgba(2,6,23,0.6)",
+        borderBottom: `1px solid ${colors.border}`,
+        boxShadow: `0 8px 32px 0 ${colors.glowPrimary}30`,
+      }}
+    >
+      <Toolbar
+        component="nav"
+        sx={{
+          maxWidth: 1280,
+          width: "100%",
+          mx: "auto",
+          px: { xs: 2, md: 6 },
+          py: 2,
+          justifyContent: "space-between",
+          gap: 6,
+          minHeight: "unset !important",
+        }}
+      >
+        {/* Logo + Nav links */}
+        <Stack direction="row" alignItems="center" gap={6}>
+          <Typography
+            component="a"
+            href={routesMap.home}
+            variant="h4"
+            aria-label="Pixel Play - Ir para home"
             sx={{
-                ...sHeader.sHeaderContainer,
-                backgroundImage: `url(${bannerInfo.backgroundImage})`,
+              background: `linear-gradient(90deg, ${colors.primary}, ${colors.secondary})`,
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              textDecoration: "none",
+              whiteSpace: "nowrap",
+              textShadow: "none",
+              filter: `drop-shadow(0 0 15px ${colors.glowPrimary})`,
             }}
-        >
+          >
+            PIXEL PLAY
+          </Typography>
 
-            <Grid
-                container
-                sx={{
-                    height: "calc(100vh - 40px)",
-                    justifyContent: "center",
-                    position: "relative",
-                    zIndex: 1,
-                }}
-            >
-                <Grid
-                    container
-                    size={12}
-                    sx={{
-                        backgroundColor: Colors.terciary,
-                        height: "60px",
-                        borderRadius: "4px",
-                    }}
+          <Stack
+            component="ul"
+            direction="row"
+            gap={4}
+            sx={{ listStyle: "none", m: 0, p: 0, display: { xs: "none", md: "flex" } }}
+          >
+            {navLinks.map((link) => (
+              <li
+                key={link.label}
+                onClick={() => navigation(link.url)}
+                style={{ cursor: "pointer" }}
+              >
+                <Typography
+                  variant="button"
+                  sx={{
+                    color: colors.textSecondary,
+                    textDecoration: "none",
+                    fontFamily: '"Space Grotesk", sans-serif',
+                    fontSize: "1rem",
+                    fontWeight: 500,
+                    "&:hover": { color: colors.textPrimary },
+                    transition: "color 0.2s",
+                  }}
                 >
-                    <Grid container justifyContent="center" size={2} sx={{ height: "100%" }}>
-                        <img
-                            src={logo}
-                            alt="logo-pixelplay"
-                            style={{
-                                height: "100%",
-                                cursor: "pointer",
-                            }}
-                        />
-                    </Grid>
-                    <Grid container size={6}>
-                        <ButtonGroup
-                            variant="text"
-                            fullWidth
-                            color="inherit"
-                            sx={{ padding: "10px 12px" }}
-                        >
-                            <Button className="isActive" onClick={() => navigation("/")} sx={sHeader.sNavButton}>
-                                Home
-                            </Button>
-                            <Button onClick={() => navigation("/")} sx={sHeader.sNavButton}>
-                                Jogos
-                            </Button>
-                            <Button onClick={() => navigation("/")} sx={sHeader.sNavButton}>
-                                Loja
-                            </Button>
-                            <Button onClick={() => navigation("/")} sx={sHeader.sNavButton}>
-                                Contato
-                            </Button>
-                            <Button onClick={() => navigation("/")} sx={sHeader.sNavButton}>
-                                Blog
-                            </Button>
-                        </ButtonGroup>
-                    </Grid>
-                </Grid>
+                  {link.label}
+                </Typography>
+              </li>
+            ))}
+          </Stack>
+        </Stack>
 
-                <Grid container size={10} sx={{ position: "relative" }}>
-                    <Grid size={{ xs: 12, md: 6 }}>
-                        <Typography
-                            variant="body1"
-                            fontWeight="bold"
-                            sx={{ ...sHeader.sTypography, textTransform: "uppercase" }}
-                        >
-                            {bannerInfo.title}
-                        </Typography>
-                        <Typography variant="h3" fontWeight="bold" sx={sHeader.sTypography}>
-                            <Typography variant="h3" component="span" sx={{ color: Colors.white, textTransform: "uppercase", fontWeight: "bold" }}>{bannerInfo.subtitle}</Typography>{" "}
-                            {bannerInfo.description.split(":")[1] ?? ""}
-                        </Typography>
-                        <Typography variant="body1" sx={sHeader.sTypography}>
-                            {bannerInfo.description}
-                        </Typography>
-                        <DeBtn
-                            label={bannerInfo.buttonText}
-                            size="large"
-                            action={() => navigation("/")}
-                        />
-                    </Grid>
-                </Grid>
-            </Grid>
-        </Grid>
-    );
+        {/* Search + icons */}
+        <Stack direction="row" alignItems="center" gap={3}>
+          <OutlinedInput
+            inputProps={{ "aria-label": "Buscar itens" }}
+            placeholder="Buscar itens..."
+            size="small"
+            startAdornment={
+              <InputAdornment position="start">
+                <SearchIcon sx={{ color: colors.textMuted, fontSize: 18 }} />
+              </InputAdornment>
+            }
+            sx={{
+              width: 256,
+              borderRadius: 9999,
+              backgroundColor: colors.surfaceSecondary,
+              display: { xs: "none", sm: "flex" },
+              "& .MuiOutlinedInput-notchedOutline": { borderColor: "transparent" },
+              "& input": { color: colors.textMuted, fontSize: "0.875rem", py: "9px" },
+              "& input::placeholder": { color: colors.textMuted, opacity: 1 },
+            }}
+          />
+
+          <Box sx={{ display: "flex", gap: 2 }}>
+            <IconButton aria-label="Carrinho de compras" sx={{ color: colors.textMuted }}>
+              <ShoppingCartOutlinedIcon fontSize="small" />
+            </IconButton>
+            <IconButton aria-label="Perfil do usuário" sx={{ color: colors.textMuted }}>
+              <PersonOutlineIcon fontSize="small" />
+            </IconButton>
+          </Box>
+        </Stack>
+      </Toolbar>
+    </AppBar>
+  );
 }

@@ -1,6 +1,21 @@
-export interface IdeBtnProps {
+import { ReactNode } from "react";
+
+export interface IDeBtnProps {
     label: string;
-    variant?: "default" | "reverse";
-    size?: "small" | "medium" | "large" | "extralarge";
+    variant: "text" | "contained" | "outlined";
+    size: "small" | "medium" | "large";
     action: () => void;
+    layoutBtn: LayoutBtn; 
+    fontSize?: "default" | "high"; 
+    endIcon?: ReactNode;
+    startIcon?: ReactNode;
+    uppercase?: boolean;
+    underline?: boolean;
+    reverse?: boolean;
 }
+
+export type LayoutBtn = 
+    | "default" 
+    | "dark" 
+    | "light" 
+    | "white";
