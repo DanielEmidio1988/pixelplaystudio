@@ -83,15 +83,15 @@ export default function Footer() {
             </Stack>
           </Grid>
 
-          <Grid size={{xs: 6, md: 3 }}>
+          <Grid size={{xs: 12, md: 3 }}>
             <FooterLinkList heading="Loja" links={shopLinks} />
           </Grid>
 
-          <Grid size={{xs: 6, md: 3 }}>
+          <Grid size={{xs: 12, md: 3 }}>
             <FooterLinkList heading="Suporte" links={supportLinks} />
           </Grid>
 
-          <Grid size={{xs: 6, md: 3 }}>
+          <Grid size={{xs: 12, md: 3 }}>
             <Stack gap={4}>
               <Typography variant="h6" sx={{ color: colors.textPrimary }}>
                 Idioma

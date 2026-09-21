@@ -20,7 +20,7 @@ export default function DeGamesSection() {
       size={12} 
       component="section" 
       aria-label="Nosso Universo" 
-      sx={{ py: 16, position: "relative" }}
+      sx={{ py: 8, position: "relative" }}
     >
       <Box
         aria-hidden
@@ -34,7 +34,7 @@ export default function DeGamesSection() {
       />
 
       <Container maxWidth="lg" sx={{ px: { xs: 3, md: 6 }, position: "relative" }}>
-        <Stack gap={8}>
+        <Stack gap={4}>
           {/* Header row */}
           <Box sx={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 4 }}>
             <DeSectionTitle
@@ -56,23 +56,28 @@ export default function DeGamesSection() {
           </Box>
 
           {/* Bento grid */}
-          <Grid container size={12} spacing={3}>
+          <Grid container size={12} spacing={1}>
             {/* Large card — spans 2 rows on desktop */}
             <Grid size={{xs: 12, md: 6}} sx={{ display: "flex" }}>
-              <Box sx={{ width: "100%", minHeight: { md: "648px" } }}>
+              <Box sx={{ width: "100%", }}>
                 <DeGameCard {...games[0]} />
               </Box>
             </Grid>
 
             {/* Right column stacked */}
-            <Grid size={{xs: 12, md: 6}} container spacing={3} alignContent="flex-start">
+            <Grid 
+              size={{xs: 12, md: 6}} 
+              container 
+              spacing={1} 
+              alignContent="flex-start"
+            >
               <Grid size={12}>
                 <DeGameCard {...games[1]} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{xs: 12, md: 6}}>
                 <DeGameCard {...games[2]} />
               </Grid>
-              <Grid size={6}>
+              <Grid size={{xs: 12, md: 6}}>
                 <DeGameCard {...games[3]} />
               </Grid>
             </Grid>

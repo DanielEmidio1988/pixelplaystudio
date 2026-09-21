@@ -9,7 +9,7 @@ export default function AboutSection() {
     <Grid size={12}
       component="section"
       aria-label="Sobre a Pixel Play"
-      sx={{ py: 16, backgroundColor: "rgba(19,19,28,0.5)", position: "relative", overflow: "hidden" }}
+      sx={{ py: 8, backgroundColor: "rgba(19,19,28,0.5)", position: "relative", overflow: "hidden" }}
     >
       <Box
         aria-hidden
@@ -26,7 +26,7 @@ export default function AboutSection() {
         <Grid size={12} container spacing={12} alignItems="center">
           {/* Left */}
           <Grid size={{xs: 12, md: 6}}>
-            <Stack gap={6}>
+            <Stack gap={4}>
               <Stack gap={3}>
                 <Typography
                   variant="h2"
@@ -38,7 +38,7 @@ export default function AboutSection() {
                   aria-hidden
                   sx={{ width: 80, height: 6, borderRadius: 9999, background: `linear-gradient(90deg, ${colors.primary}, ${colors.secondary})` }}
                 />
-                <Typography variant="body1" sx={{ color: colors.textPrimary }}>
+                <Typography variant="body2" sx={{ color: colors.textPrimary }}>
                   A Pixel Play é um estúdio brasileiro dedicado a criar entretenimento interativo de alta fidelidade.
                   Expandimos os limites da narrativa através de tecnologia de ponta e excelência artística.
                 </Typography>
@@ -84,7 +84,7 @@ export default function AboutSection() {
               />
               <Card
                 sx={{
-                  borderRadius: 8,
+                  borderRadius: 4,
                   overflow: "hidden",
                   border: `1px solid ${colors.borderStrong}`,
                   boxShadow: "0 25px 50px -12px rgba(0,0,0,0.25)",
@@ -92,7 +92,7 @@ export default function AboutSection() {
                   backgroundColor: "rgba(25,25,35,0.4)",
                 }}
               >
-                <Box sx={{ height: 256, position: "relative", overflow: "hidden" }}>
+                <Box sx={{ height: 200, position: "relative", overflow: "hidden" }}>
                   <CardMedia
                     component="img"
                     image={careerPhoto}
@@ -102,9 +102,9 @@ export default function AboutSection() {
                   <Box aria-hidden sx={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(37,37,49,0.6), transparent)", opacity: 0.6 }} />
                 </Box>
 
-                <Box sx={{ backdropFilter: "blur(12px)", backgroundColor: "rgba(37,37,49,0.8)", p: 5, display: "flex", flexDirection: "column", gap: 3 }}>
+                <Box sx={{ backdropFilter: "blur(12px)", backgroundColor: "rgba(37,37,49,0.8)", p: 5, display: "flex", flexDirection: "column", gap: 2 }}>
                   <Typography
-                    variant="h4"
+                    variant="h5"
                     sx={{ color: colors.textPrimary, textShadow: `0 0 20px ${colors.secondary}cc` }}
                   >
                     Trabalhe Conosco

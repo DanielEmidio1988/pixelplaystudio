@@ -8,6 +8,7 @@ export interface IBannerItem{
     title?: string;
     subtitle?: string;
     description: string;
+    colorAction?: string; 
     action?: IActionBtnBanner[];
 }
 

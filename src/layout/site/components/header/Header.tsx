@@ -1,12 +1,12 @@
-import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import MenuIcon from "@mui/icons-material/Menu";
 import {
   AppBar,
   Box,
   IconButton,
-  InputAdornment,
-  OutlinedInput,
+  Menu,
+  MenuItem,
   Stack,
   Toolbar,
   Typography,
@@ -14,10 +14,22 @@ import {
 import { colors } from "../../../theme";
 import { useNavigate } from "react-router-dom";
 import { routesMap } from "../../../../components/routercomponent/Routes";
+import { useState } from "react";
 
 export default function Header() {
-
   const navigation = useNavigate();
+
+  const [isOpenMenu, setIsOpenMenu] = useState<null | HTMLElement>(null);
+
+  const handleOpenMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setIsOpenMenu(event.currentTarget);
+  }
+
+  const handleNavigate = (url: string) => {
+    navigation(url);
+    setIsOpenMenu(null);
+  }
+
   const navLinks = [
     {
       label: "JOGOS",
@@ -66,7 +78,16 @@ export default function Header() {
         }}
       >
         {/* Logo + Nav links */}
-        <Stack direction="row" alignItems="center" gap={6}>
+        <Stack direction="row" alignItems="center" gap={{ xs: 2, md: 6 }}>
+
+          <IconButton
+            aria-label="Abrir menu de navegação"
+            onClick={handleOpenMenu}
+            sx={{ display: { xs: "flex", md: "none" }, color: colors.textMuted }}
+          >
+            <MenuIcon />
+          </IconButton>
+
           <Typography
             component="a"
             href={routesMap.home}
@@ -102,9 +123,6 @@ export default function Header() {
                   sx={{
                     color: colors.textSecondary,
                     textDecoration: "none",
-                    fontFamily: '"Space Grotesk", sans-serif',
-                    fontSize: "1rem",
-                    fontWeight: 500,
                     "&:hover": { color: colors.textPrimary },
                     transition: "color 0.2s",
                   }}
@@ -116,28 +134,41 @@ export default function Header() {
           </Stack>
         </Stack>
 
-        {/* Search + icons */}
-        <Stack direction="row" alignItems="center" gap={3}>
-          <OutlinedInput
-            inputProps={{ "aria-label": "Buscar itens" }}
-            placeholder="Buscar itens..."
-            size="small"
-            startAdornment={
-              <InputAdornment position="start">
-                <SearchIcon sx={{ color: colors.textMuted, fontSize: 18 }} />
-              </InputAdornment>
-            }
-            sx={{
-              width: 256,
-              borderRadius: 9999,
-              backgroundColor: colors.surfaceSecondary,
-              display: { xs: "none", sm: "flex" },
-              "& .MuiOutlinedInput-notchedOutline": { borderColor: "transparent" },
-              "& input": { color: colors.textMuted, fontSize: "0.875rem", py: "9px" },
-              "& input::placeholder": { color: colors.textMuted, opacity: 1 },
-            }}
-          />
+        <Menu
+          anchorEl={isOpenMenu}
+          open={Boolean(isOpenMenu)}
+          onClose={() => setIsOpenMenu(null)}
+          sx={{
+            display: { xs: "block", md: "none" },
+            "& .MuiPaper-root": {
+              backgroundColor: "rgba(2,6,23,0.95)",
+              backdropFilter: "blur(12px)",
+              border: `1px solid ${colors.border}`,
+              color: colors.textSecondary,
+              width: "200px",
+              mt: 1.5,
+            },
+          }}
+        >
+          {navLinks.map((link) => (
+            <MenuItem
+              key={link.label}
+              onClick={() => handleNavigate(link.url)}
+              sx={{
+                py: 1.5,
+                "&:hover": {
+                  backgroundColor: colors.surfaceSecondary,
+                  color: colors.textPrimary,
+                },
+              }}
+            >
+              {link.label}
+            </MenuItem>
+          ))}
+        </Menu>
 
+        {/* icons */}
+        <Stack direction="row" alignItems="center" gap={3}>
           <Box sx={{ display: "flex", gap: 2 }}>
             <IconButton aria-label="Carrinho de compras" sx={{ color: colors.textMuted }}>
               <ShoppingCartOutlinedIcon fontSize="small" />

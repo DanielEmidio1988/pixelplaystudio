@@ -38,9 +38,9 @@ const articles = [
 
 export default function DeNewsSection() {
   return (
-    <Grid container size={12} component="section" aria-label="Últimas Notícias" sx={{ py: 16 }}>
+    <Grid container size={12} component="section" aria-label="Últimas Notícias" sx={{ py: 8 }}>
       <Container maxWidth="lg" sx={{ px: { xs: 3, md: 6 } }}>
-        <Stack gap={8}>
+        <Stack gap={4}>
           <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             <DeSectionTitle
               label="ULTIMAS"

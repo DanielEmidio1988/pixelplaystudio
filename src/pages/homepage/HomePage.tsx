@@ -15,7 +15,7 @@ export function HomePage() {
         eyebrow: "Live Event: Eclipse da Mente",
         title: "AETHERCORE",
         subtitle: "v1.8",
-        description: "O Loop Zero começou! Enfrente simulações corrompidas por Host Zero/9. Skins e dados espectrais te esperam.",
+        description: "O Loop Zero começou! Enfrente simulações corrompidas por Host Zero/9.",
         action: [
             {
                 action: () => {},

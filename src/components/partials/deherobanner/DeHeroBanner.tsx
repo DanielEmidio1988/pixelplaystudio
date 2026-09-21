@@ -22,6 +22,7 @@ import {
 } from "./DeHeroBanner.types";
 
 
+
 function DeHeroBannerItem({
     banner,
 }: {
@@ -36,7 +37,7 @@ function DeHeroBannerItem({
             aria-label={`Destaque — ${banner.title}`}
             sx={{
                 position: "relative",
-                minHeight: "100vh",
+                minHeight: "90vh",
                 height: "100%",
                 display: "flex",
                 alignItems: "center",
@@ -97,13 +98,11 @@ function DeHeroBannerItem({
                 sx={{
                     position: "relative",
                     zIndex: 1,
-                    pt: 10,
-                    pb: 10,
                     px: { xs: 3, md: 6 },
                 }}
             >
                 <Stack
-                    gap={4}
+                    gap={2}
                     sx={{
                         maxWidth: 672,
                     }}
@@ -134,12 +133,10 @@ function DeHeroBannerItem({
                                 boxShadow: `0 0 15px ${colors.glowPrimary}`,
                                 borderRadius: 9999,
                                 color: colors.secondary,
-                                fontFamily: '"Plus Jakarta Sans", sans-serif',
-                                fontWeight: 700,
-                                fontSize: "0.875rem",
                                 letterSpacing: "0.1em",
                                 textTransform: "uppercase",
                                 height: 34,
+                                cursor: "default",
 
                                 "& .MuiChip-icon": {
                                     mr: 0.5,
@@ -156,9 +153,9 @@ function DeHeroBannerItem({
                                 component="h1"
                                 variant="h1"
                                 sx={{
-                                    color: colors.textPrimary,
                                     textShadow: `0 0 20px ${colors.glowPrimary}`,
                                     lineHeight: 1,
+                                    cursor: "default",
                                 }}
                             >
                                 {banner.title}
@@ -167,12 +164,13 @@ function DeHeroBannerItem({
 
                         {banner.subtitle && (
                             <Typography
-                                component="p"
-                                variant="h1"
+                                component="h2"
+                                variant="h2"
                                 sx={{
-                                    color: colors.primary,
+                                    color: banner.colorAction ? banner.colorAction : colors.primary,
                                     textShadow: `0 0 20px ${colors.glowPrimary}`,
                                     lineHeight: 1,
+                                    cursor: "default",
                                 }}
                             >
                                 {banner.subtitle}
@@ -182,10 +180,12 @@ function DeHeroBannerItem({
 
                     {/* Description */}
                     <Typography
-                        variant="body1"
+                        variant="body2"
+                        component="h3"
                         sx={{
                             color: colors.textPrimary,
-                            maxWidth: 512,
+                            maxWidth: 450,
+                            cursor: "default",
                         }}
                     >
                         {banner.description}

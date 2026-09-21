@@ -54,22 +54,17 @@ O design do PixelPlay foi pensado para transmitir uma experiência moderna, imer
     <td align="center">
       <div style="width:120px;height:80px;background:#BD00FF;border-radius:8px;"></div>
       <b>Primary</b><br>
-      <code>#BD00FF</code>
+      <code>#DF8EFF</code>
     </td>
     <td align="center">
       <div style="width:120px;height:80px;background:#00F0FF;border-radius:8px;"></div>
       <b>Secondary</b><br>
-      <code>#00F0FF</code>
+      <code>#00EEFC</code>
     </td>
     <td align="center">
       <div style="width:120px;height:80px;background:#FF007A;border-radius:8px;"></div>
       <b>Tertiary</b><br>
-      <code>#FF007A</code>
-    </td>
-    <td align="center">
-      <div style="width:120px;height:80px;background:#0A0A12;border-radius:8px;border:1px solid #333;"></div>
-      <b>Neutral</b><br>
-      <code>#0A0A12</code>
+      <code>#FF6B98</code>
     </td>
   </tr>
 </table>

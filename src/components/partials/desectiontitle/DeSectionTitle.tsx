@@ -5,7 +5,7 @@ import { IDeSectionTitle } from "./DeSectionTitle.types";
 
 export default function DeSectionTitle({ label, accent, description, accentFirst }: IDeSectionTitle) {
   return (
-    <Stack gap={2}>
+    <Stack gap={1}>
       <Typography
         variant="h2"
         sx={{ textShadow: `0 0 20px ${colors.glowPrimary}`, textTransform: "uppercase" }}
@@ -23,7 +23,7 @@ export default function DeSectionTitle({ label, accent, description, accentFirst
         )}
       </Typography>
       {description && (
-        <Typography variant="body2" sx={{ color: colors.textMuted, maxWidth: 448 }}>
+        <Typography variant="body2" sx={{ color: colors.textMuted }}>
           {description}
         </Typography>
       )}

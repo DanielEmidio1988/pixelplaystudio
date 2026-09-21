@@ -87,7 +87,7 @@ export function Portfolio() {
                 <Grid
                     container
                     size={12}
-                    spacing={2}
+                    spacing={4}
                     sx={{
                         display: "flex",
                         overflowX: "auto",
@@ -99,7 +99,7 @@ export function Portfolio() {
                     }}
                 >
                     {portfolioCards.map((card) => (
-                        <Grid size={{ xs: 12, md: 3 }} key={card.title.trim()} sx={{ scrollSnapAlign: "start", flexShrink: 0 }}>
+                        <Grid size={{ xs: 12, md: 6 }} key={card.title.trim()} sx={{ scrollSnapAlign: "start", flexShrink: 0 }}>
                             <PortfolioCards {...card} />
                         </Grid>
                     ))}

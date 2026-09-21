@@ -11,14 +11,14 @@ const typography: TypographyOptions = {
   h1: {
     fontFamily: spaceGrotesk,
     fontWeight: 700,
-    fontSize: "6rem",
+    fontSize: "4rem",
     lineHeight: 1,
     letterSpacing: "-0.05em",
   },
   h2: {
     fontFamily: spaceGrotesk,
     fontWeight: 700,
-    fontSize: "3rem",
+    fontSize: "2.6rem",
     lineHeight: 1,
     letterSpacing: "-0.05em",
   },

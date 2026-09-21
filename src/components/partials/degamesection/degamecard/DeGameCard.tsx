@@ -25,8 +25,7 @@ export default function DeGameCard({
     <Card
       sx={{
         position: "relative",
-        height: "100%",
-        minHeight: isLarge ? 624 : 300,
+        height: isLarge ? 400 : 196,
         overflow: "hidden",
         borderColor: colors.borderStrong,
         boxShadow: "0 25px 50px -12px rgba(0,0,0,0.25)",
@@ -96,7 +95,7 @@ export default function DeGameCard({
             sx={{
               color: accentColor,
               textShadow: `0 0 20px ${accentColor}cc`,
-              marginBottom: "8px"
+              // marginBottom: "8px"
             }}
           >
             {genre}
