@@ -4,6 +4,8 @@ import DeHeroBanner from "../../components/partials/deherobanner/DeHeroBanner";
 import controller from "./GameDetailsPage.controller";
 import { IBannerItem } from "../../components/partials/deherobanner/DeHeroBanner.types";
 import { validGames, GameSlug } from "../../components/routercomponent/Routes";
+import { PersonSection } from "./components/personsection/PersonSection";
+import { IPersonsGame } from "./GameDetailsPage.types";
 
 export function GameDetailsPage() {
     const { gameId } = useParams();
@@ -14,6 +16,7 @@ export function GameDetailsPage() {
     }
 
     const banner: IBannerItem = controller.fetchBanner(gameId as GameSlug);
+    const persons: IPersonsGame[] = controller.fetchPersons(gameId as GameSlug);
 
     return (
         <Grid component="main" container size={12}>
@@ -22,7 +25,10 @@ export function GameDetailsPage() {
                     banner
                 ]}
             />
- 
+            <PersonSection
+                title="Personagens"
+                persons={persons}
+            />
         </Grid>
     )
 }
