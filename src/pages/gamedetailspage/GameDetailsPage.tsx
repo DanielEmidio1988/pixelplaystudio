@@ -5,7 +5,9 @@ import controller from "./GameDetailsPage.controller";
 import { IBannerItem } from "../../components/partials/deherobanner/DeHeroBanner.types";
 import { validGames, GameSlug } from "../../components/routercomponent/Routes";
 import { PersonSection } from "./components/personsection/PersonSection";
-import { IPersonsGame } from "./GameDetailsPage.types";
+import { IGamePreviewSlidesArea, IHistoryGame, IPersonsGame } from "./GameDetailsPage.types";
+import { HistoryGameSection } from "./components/historygamesection/HistoryGameSection";
+import { GameShowSection } from "./components/gameshowsection/GameShowSection";
 
 export function GameDetailsPage() {
     const { gameId } = useParams();
@@ -17,6 +19,8 @@ export function GameDetailsPage() {
 
     const banner: IBannerItem = controller.fetchBanner(gameId as GameSlug);
     const persons: IPersonsGame[] = controller.fetchPersons(gameId as GameSlug);
+    const history: IHistoryGame = controller.fetchHistory(gameId as GameSlug);
+    const gameShow: IGamePreviewSlidesArea = controller.fetchGameShow(gameId as GameSlug);
 
     return (
         <Grid component="main" container size={12}>
@@ -28,6 +32,13 @@ export function GameDetailsPage() {
             <PersonSection
                 title="Personagens"
                 persons={persons}
+            />
+            <HistoryGameSection 
+                gameName={String(gameId)}
+                history={history}
+            />
+            <GameShowSection 
+                gameshow={gameShow}
             />
         </Grid>
     )

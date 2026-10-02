@@ -2,7 +2,7 @@ import { IBannerItem } from "../../components/partials/deherobanner/DeHeroBanner
 
 export interface IGameContent {
     heroBanner: IBannerItem,
-    gamePreviewSlides: string[],
+    gamePreviewSlides: IGamePreviewSlidesArea,
     historyGame: IHistoryGame,
     persons?: IPersonsGame[],
 }
@@ -11,12 +11,23 @@ export interface IHistoryGame {
     title: string,
     titleAccent?: string,
     subtitle: string,
-    sections: IHistoryGameSection[],
+    sections: IImgAndLabelSection[],
 }
 
-export interface IHistoryGameSection {
+export interface IImgAndLabelSection {
     description: string,
-    img?: string,
+    img: string,
+}
+
+export interface IGameShowSlide extends IImgAndLabelSection {
+    title: string,
+}
+
+export interface IGamePreviewSlidesArea{
+    title: string;
+    titleAccent: string;
+    titleDescription?: string;
+    slides: IGameShowSlide[];
 }
 
 export interface IPersonsGame {
